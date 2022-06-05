@@ -31,4 +31,5 @@ ActiveRecord::Schema.define(version: 2022_06_05_015353) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "reviews", "products"
 end

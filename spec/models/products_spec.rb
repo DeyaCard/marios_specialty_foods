@@ -12,3 +12,10 @@ describe Products do
     expect(products.reviews()).to(eq([review1, review2]))
   end
 end
+
+describe Products do 
+  it("titleizes the name of a product") do
+    products = Products.create({name: "tomatoes", cost: 3, country_of_origin: "mexico"})      
+    expect(products.name()).to(eq("Tomatoes"))
+  end
+end
