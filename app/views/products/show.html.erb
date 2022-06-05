@@ -2,6 +2,21 @@
 <h3><%= @products.cost %></h3>
 <h3><%= @products.country_of_origin %></h3>
 
+<% if @products.reviews.any? %>
+  <h4>Here are the reviews for this product:</h4>
+
+  <% @products.reviews.each do |reviews| %>
+    <ul>
+      <li>
+        <%= link_to reviews.author, products_reviews_path(@products, reviews) %>
+      </li>
+    </ul>
+  <% end %>
+<% else %>
+  <p>No reviews are listed for this product.</p>
+<% end %>
+
+<p><%= link_to "Add a review", new_products_reviews_path(@products) %></p>
 
 <p><%= link_to "Edit", edit_products_path(@products) %></p>
 <p><%= link_to "Delete", products_path(@products),
