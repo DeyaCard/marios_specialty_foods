@@ -26,7 +26,7 @@ An application created to track specialty food products and their reviews, power
 
 
 ## Known Bugs:
-*  (WIP)
+*  (WIP - Migrations pending)
 
 
 ## License: 
