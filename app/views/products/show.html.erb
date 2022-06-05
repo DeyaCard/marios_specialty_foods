@@ -1,0 +1,11 @@
+<h1><%= @products.name %></h1>
+<h3><%= @products.cost %></h3>
+<h3><%= @products.country_of_origin %></h3>
+
+
+<p><%= link_to "Edit", edit_products_path(@products) %></p>
+<p><%= link_to "Delete", products_path(@products),
+                         :data => {:confirm => "You sure?",
+                                   :method => "delete"} %></p>
+
+<p><%= link_to "Return to products", products_path %></p>
