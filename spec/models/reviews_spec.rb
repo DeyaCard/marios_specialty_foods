@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe Reviews do
+describe Review do
   it { should validate_presence_of :author }
   it { should validate_presence_of :content_of_body }
   it { should validate_presence_of :rating }
