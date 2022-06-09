@@ -1,14 +1,14 @@
-<h1><%= @products.name %></h1>
-<h3><%= @products.cost %></h3>
-<h3><%= @products.country_of_origin %></h3>
+<h1><%= @product.name %></h1>
+<h3><%= @product.cost %></h3>
+<h3><%= @product.country_of_origin %></h3>
 
-<% if @products.reviews.any? %>
+<% if @product.reviews.any? %>
   <h4>Here are the reviews for this product:</h4>
 
-  <% @products.reviews.each do |reviews| %>
+  <% @product.reviews.each do |review| %>
     <ul>
       <li>
-        <%= link_to reviews.author, products_reviews_path(@products, reviews) %>
+        <%= link_to review.author, product_review_path(@product, review) %>
       </li>
     </ul>
   <% end %>
@@ -18,9 +18,9 @@
 
 <p><%= link_to "Add a review", new_products_reviews_path(@products) %></p>
 
-<p><%= link_to "Edit", edit_products_path(@products) %></p>
-<p><%= link_to "Delete", products_path(@products),
+<p><%= link_to "Edit", edit_product_path(@product) %></p>
+<p><%= link_to "Delete", product_path(@product),
                          :data => {:confirm => "You sure?",
                                    :method => "delete"} %></p>
 
-<p><%= link_to "Return to products", products_path %></p>
+<p><%= link_to "Return to products", product_path %></p>

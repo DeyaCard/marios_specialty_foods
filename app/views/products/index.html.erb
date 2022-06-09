@@ -3,7 +3,7 @@
 <% if @products.any? %>
   <ul>
     <% @products.each do |products| %>
-      <li><%= link_to products.name, products_path(products) %></li>
+      <li><%= link_to product.name, product_path(product) %></li>
     <% end %>
   </ul>
 <% else %>
@@ -11,4 +11,4 @@
 <% end %>
 
 
-<p><%= link_to "Add new product", new_products_path %></p>
+<p><%= link_to "Add new product", new_product_path %></p>

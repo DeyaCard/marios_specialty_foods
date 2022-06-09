@@ -1,22 +1,10 @@
 require 'rails_helper'
 
 describe Products do
-  it { should have_many(:reviews) }
-
   it { should validate_presence_of :name }
-
-  it { should validate_length_of(:name).is_at_most(100) }
-
-
-end
-
-describe Products do
-  it("has many reviews") do
-    products = Products.create(name: "products")
-    review1 = Reviews.create(author: "review1", products_id: products.id)
-    review22 = Reviews.create(author: "review2", products_id: products.id)
-    expect(products.reviews()).to(eq([review1, review2]))
-  end
+  it { should validate_presnce_of :cost }
+  it { should validate_presence_of :origin }
+  it { should have_many(:review) }
 end
 
 describe Products do 

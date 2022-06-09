@@ -1,7 +1,7 @@
 class ProductsController < ApplicationController
 
   def index
-    @products = Products.all
+    @products = Product.all
     render :index  
   end
 
@@ -11,7 +11,7 @@ class ProductsController < ApplicationController
   end
 
   def create
-    @products = Products.new(products_params)
+    @products = Product.new(products_params)
     if @products.save
       flash[:notice] = "Product successfully added!"
       redirect_to products_path
@@ -21,16 +21,16 @@ class ProductsController < ApplicationController
   end
 
   def edit
-    @products = Products.find(params[:id])
+    @products = Product.find(params[:id])
     render :edit
   end
 
   def show
-    @products = Products.find(params[:id])
+    @products = Product.find(params[:id])
     render :show  end
 
   def update
-    @products= Products.find(params[:id])      
+    @products= Product.find(params[:id])      
     if @products.update(products_params)
       redirect_to products_path
     else
@@ -39,7 +39,7 @@ class ProductsController < ApplicationController
   end
 
   def destroy
-    @products = Products.find(params[:id])
+    @products = Product.find(params[:id])
     @products.destroy
     redirect_to products_path  end
 

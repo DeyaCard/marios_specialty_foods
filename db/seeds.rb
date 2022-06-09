@@ -1,12 +1,20 @@
-Products.destroy_all
-Reviews.destroy_all
+Product.destroy_all
+Review.destroy_all
 
-50.times do |index|
-  products = Products.create!(name: Faker::Food.ingredient, cost: Faker::Number.decimal(2), country_of_origin: Faker::Address.country)
-  products.save
-    5.times do |index|
-    Reviews.create!(author: Faker::Name.name, content_body: Faker::Lorem.characters(250), rating: Faker::Number.between(from: 1, to: 5))
-    products_id: products.id
-  end
+50.times do
+  product = Product.create!(
+    name: Faker::Food.ingredient, 
+    cost: Faker::Number.decimal(2), 
+    country_of_origin: Faker::Address.country
+    )
+    5.times do
+      Review.create!(
+      author: Faker::Name.name, 
+      content_body: Faker::Lorem.characters(250), 
+      rating: Faker::Number.between(1, 5),
+      product_id: product.id
+      )
+    end
+    
 end
-p "Created #{Products.count} products and #{Review.count} reviews"
+p "Created #{Product.count} products and #{Review.count} Review"
