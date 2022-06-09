@@ -2,7 +2,7 @@
 
 <% if @products.any? %>
   <ul>
-    <% @products.each do |products| %>
+    <% @products.each do |product| %>
       <li><%= link_to product.name, product_path(product) %></li>
     <% end %>
   </ul>

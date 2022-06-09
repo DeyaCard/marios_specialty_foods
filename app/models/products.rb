@@ -3,7 +3,8 @@ class Product < ApplicationRecord
   validates :name, :presence => true
   validates :cost, :presence => true
   validates :country_of_origin, :presence => true
-  
+  before_save(:titleize_products)
+
   scope :most_reviews, -> {(
     select("product.id, product.name, count(review.id) as review_count")
     .joins(:reviews)
@@ -263,7 +264,6 @@ class Product < ApplicationRecord
   ]
 
   
-  before_save(:titleize_products)
 
   private
     def titleize_products
