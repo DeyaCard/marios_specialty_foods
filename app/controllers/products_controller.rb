@@ -43,6 +43,13 @@ class ProductsController < ApplicationController
     @products.destroy
     redirect_to products_path  end
 
+  def home
+    @products = Product.all@three_most_recent = Product.three_most_recent
+    @usa_product = Product.usa_prodcut
+    @most_reviewed = Product.most_reviewed
+    render :home
+  end
+
   private
     def products_params
       params.require(:products).permit(:name, :cost, :country_of_origin)
