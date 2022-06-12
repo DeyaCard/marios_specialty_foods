@@ -21,12 +21,18 @@ An application created to track specialty food products and their reviews, power
 * Clone or download this repository onto your desktop: https://github.com/DeyaCard/marios_specialty_foods
 * Navigate to top-level of directory
 * Open code editing software, such as VS Code
-* $ bundle install 
-* $ 
+* run bundle install in the terminal
+* run rake db:create
+* run rake db:test:prepare
+* run rake db:migrate
+* run rake db:seed
+* run rails s
+* In your browser of choice, navigate to localhost:3000
+* Enjoy!
 
 
 ## Known Bugs:
-*  (WIP - Migrations pending)
+*  (WIP - home page fails to load, tests passing at 92%)
 
 
 ## License: 
