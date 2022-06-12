@@ -15,7 +15,7 @@ class Product < ApplicationRecord
   scope :three_most_recent, -> { order(create_at: :desc).limit(3)}
   scope :from_usa, -> { where(country_of_origin: "United States of America")}
 
-  COUNTRIES = [
+  COUNTRY_LIST = [
     "Afghanistan",
     "Aland Islands",
     "Albania",
