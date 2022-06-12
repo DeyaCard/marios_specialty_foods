@@ -10,7 +10,7 @@ Review.destroy_all
     5.times do
       Review.create!(
       author: Faker::Name.name, 
-      content_body: Faker::Lorem.characters(250), 
+      content_of_body: Faker::Lorem.characters(250), 
       rating: Faker::Number.between(1, 5),
       product_id: product.id
       )
