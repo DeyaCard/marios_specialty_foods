@@ -52,7 +52,7 @@ class ProductsController < ApplicationController
     @products = Product.all
     @three_most_recent = Product.three_most_recent
     @usa_product = Product.from_usa
-    @most_reviewed = Product.most_reviewed
+    @most_reviews = Product.most_reviews
     render :home
   end
 
