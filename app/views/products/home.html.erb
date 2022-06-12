@@ -4,6 +4,7 @@
 </div>
 
 <h2>New reviews:</h2>
+
 <% if @three_most_reviews.any? %>
   <ul>
     <% @three_most_reviews.each do |product| %>
@@ -17,6 +18,7 @@
 <br>
 
 <h2>Most reviewed products:</h2>
+
 <% if @most_reviews.any? %>
   <ul>
     <% @most_reviews.each do |product| %>
@@ -30,6 +32,7 @@
 <br>    
 
 <h2>Local products:</h2>
+
 <% if @from.usa.any? %>
   <ul>
     <% @from_usa.each do |product| %>
