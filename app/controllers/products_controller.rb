@@ -11,11 +11,12 @@ class ProductsController < ApplicationController
   end
 
   def create
-    @product = Product.new(products_params)
+    @product = Product.new(product_params)
     if @product.save
       flash[:notice] = "Product successfully added!"
       redirect_to products_path
     else
+      flash[:alert] = "Error - please try again."
       render :new
     end  
   end
@@ -32,9 +33,11 @@ class ProductsController < ApplicationController
 
   def update
     @product= Product.find(params[:id])      
-    if @product.update(products_params)
+    if @product.update(product_params)
+      flash[:notice] = "Product updated successfully!"
       redirect_to products_path
     else
+      flash[:alert] = "Error - please try again."
      render :edit
     end
   end

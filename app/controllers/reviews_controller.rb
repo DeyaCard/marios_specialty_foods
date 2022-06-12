@@ -16,7 +16,8 @@ class ReviewsController < ApplicationController
     if @review.save
       flash[:notice] = "Thanks for the feedback!"
       redirect_to product_path(@product)
-        else
+    else
+      flash[:alert] = "Error - please try again."
       render :new
     end  
   end
@@ -38,6 +39,9 @@ class ReviewsController < ApplicationController
     if @review.update(review_params)
       flash[:notice] = "Review updated"
       redirect_to product_path(@review.product)
+    else
+      flash[:alert] = "Error - please try again."
+      @product = Product.find(params[:product_id])
       render :edit
     end
   end
@@ -54,5 +58,3 @@ class ReviewsController < ApplicationController
   end
 end
 
-
-end
