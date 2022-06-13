@@ -1,44 +1,46 @@
 <div class="jumbotron">
-  <hi>Mario's Specialty Foods</h1>
-  <p>Established in 1981 in Portland, Oregon, Mario's specializes in high quality foods from around the globe. Please view our wide inventory of goods below. We value feedback so please leave a review. Enjoy! </p>
+  <div class="container">
+    <h1><strong>Mario's Specialty Foods</strong></h1>
+      <p>Established in 1981 in Portland, Oregon, Mario's specializes in high quality foods from around the globe. Please view our wide inventory of goods below. We value feedback so please leave a review. Enjoy! </p>
+  </div>
+</div>  
+
+<div class="container">
+   <%# <% if @products.any? %> 
+
+    <h2>New reviews:</h2>
+      <% if @three_most_recent.any? %>
+        <ul>
+          <% @three_most_recent.each do |product| %>
+           <li><%= link_to product.name, product_path(product) %></li>
+          <% end %>
+        </ul>
+      <% else %>
+        <p>Sorry - no review available.</p>
+      <% end %> 
+
+
+    <h2>Most reviewed products:</h2>
+      <% if @most_reviews.any? %>
+        <ul>
+          <% @most_reviews.each do |product| %>
+            <li><%= link_to product.name, product_path(product) %></li>
+          <% end %>
+        </ul>
+      <% else %>
+       <p>Sorry - no reviews available.</p>
+      <% end %> 
+
+
+    <h2>Local products:</h2>
+      <% if @from_usa.any? %>
+        <ul>
+          <% @from_usa.each do |product| %>
+            <li><%= link_to product.name, product_path(product) %></li>
+          <% end %>
+        </ul>
+      <% else %>
+        <p>Sorry - no products available.</p>
+      <% end %> 
+
 </div>
-
-<h2>New reviews:</h2>
-
-<% if @three_most_reviews.any? %>
-  <ul>
-    <% @three_most_reviews.each do |product| %>
-    <li><%= link_to product.name, product_path(product) %></li>
-    <% end %>
-  </ul>
- <% else %>
- <p> Sorry - no products available </p>
- <% end %> 
-
-<br>
-
-<h2>Most reviewed products:</h2>
-
-<% if @most_reviews.any? %>
-  <ul>
-    <% @most_reviews.each do |product| %>
-    <li><%= link_to product.name, product_path(product) %></li>
-    <% end %>
-  </ul>
-  <% else %>
-  <p> Sorry - no products available </p>
-  <% end %> 
-
-<br>    
-
-<h2>Local products:</h2>
-
-<% if @from.usa.any? %>
-  <ul>
-    <% @from_usa.each do |product| %>
-    <li><%= link_to product.name, product_path(product) %></li>
-    <% end %>
-   </ul>
-  <% else %>
-  <p> Sorry - no products available </p>
-  <% end %> 

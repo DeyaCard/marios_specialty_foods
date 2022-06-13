@@ -51,7 +51,7 @@ class ProductsController < ApplicationController
   def home
     @products = Product.all
     @three_most_recent = Product.three_most_recent
-    @usa_product = Product.from_usa
+    @from_usa = Product.from_usa
     @most_reviews = Product.most_reviews
     render :home
   end

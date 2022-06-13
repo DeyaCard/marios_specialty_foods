@@ -1,14 +1,20 @@
 <%= render "layouts/errors", :object => @product %>
 
 <%= form_for @product do |f| %>
+  <div class="form-group">
   <%= f.label :name %>
-  <%= f.text_field :name %>
-  <br>
+  <%= f.text_field :name, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
   <%= f.label :cost %>
-  <%= f.text_field :cost %>
-  <br>
+  <%= f.text_field :cost, class: "form-control" %>
+  </div>
+
   <%= f.label :country_of_origin %>
   <%= f.select(:country_of_origin, Product::COUNTRY_LIST) %> 
-  <br>  
-  <%= f.submit %>
+  
+  <div class="actions">
+  <%= f.submit class: "btn btn-primary" %>
+  </div>
 <% end %>
