@@ -32,7 +32,7 @@ An application created to track specialty food products and their reviews, power
 
 
 ## Known Bugs:
-*  (WIP - some routes may fail to load.)
+*  (WIP - cannot add a new review.)
 
 
 ## License: 
