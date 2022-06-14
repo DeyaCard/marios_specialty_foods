@@ -4,6 +4,7 @@
   <%= f.label :author %>
   <%= f.text_field :author %>
   <br>
+  <br>
   <%= f.label :rating %>
   <%= f.radio_button :rating, '1' %>
   <%= f.label :rating, '𝟭', value: '1' %>
@@ -16,8 +17,10 @@
   <%= f.radio_button :rating, '5' %>
   <%= f.label :rating, '5', value: '5' %>
   <br>
+  <br>
   <%= f.label :content_body %>
   <%= f.text_area :content_body %>
+  <br>
   <br>
   <%= f.submit %>
 <% end %>
