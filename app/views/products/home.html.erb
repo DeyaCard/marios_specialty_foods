@@ -8,7 +8,11 @@
 <div class="container">
    <%# <% if @products.any? %> 
 
-    <h2>New reviews:</h2>
+   <h3><%= link_to "Browse all products here!", products_path %></h3> 
+ <br>
+
+    <h3>Popular links:</h3>
+    <h4>New reviews</h4>
       <% if @three_most_recent.any? %>
         <ul>
           <% @three_most_recent.each do |product| %>
@@ -20,7 +24,7 @@
       <% end %> 
 
 
-    <h2>Most reviewed products:</h2>
+    <h4>Most reviewed products</h4>
       <% if @most_reviews.any? %>
         <ul>
           <% @most_reviews.each do |product| %>
@@ -32,7 +36,7 @@
       <% end %> 
 
 
-    <h2>Local products:</h2>
+    <h4>Local products</h4>
       <% if @from_usa.any? %>
         <ul>
           <% @from_usa.each do |product| %>
@@ -42,5 +46,6 @@
       <% else %>
         <p>Sorry - no products available.</p>
       <% end %> 
+
 
 </div>

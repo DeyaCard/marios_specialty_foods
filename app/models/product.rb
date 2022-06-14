@@ -10,6 +10,7 @@ class Product < ApplicationRecord
   scope :from_usa, -> { where(country_of_origin: "United States of America")}
 
   COUNTRY_LIST = [
+    " ",
     "Afghanistan",
     "Aland Islands",
     "Albania",
