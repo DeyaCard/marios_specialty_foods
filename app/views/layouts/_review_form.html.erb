@@ -5,17 +5,9 @@
   <%= f.text_field :author %>
   <br>
   <br>
+ 
   <%= f.label :rating %>
-  <%= f.radio_button :rating, '1' %>
-  <%= f.label :rating, '𝟭', value: '1' %>
-  <%= f.radio_button :rating, '2' %>
-  <%= f.label :rating, '2', value: '2' %>
-  <%= f.radio_button :rating, '3' %>
-  <%= f.label :rating, '3', value: '3' %>
-  <%= f.radio_button :rating, '4' %>
-  <%= f.label :rating, '4', value: '4' %>
-  <%= f.radio_button :rating, '5' %>
-  <%= f.label :rating, '5', value: '5' %>
+  <%= f.number_field :rating, min: 1, max: 5 %>
   <br>
   <br>
   <%= f.label :content_body %>

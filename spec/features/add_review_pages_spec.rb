@@ -6,19 +6,26 @@ describe "the add a review process" do
     test_product.save
     visit products_path
     click_on 'Tomatoe'
-    click_on 'Add a review'
-    
-    fill_in 'Name', :with => 'tomatoes'
-    fill_in 'Cost', :with => '2.00'
-    select 'Mexico', :from => 'Country of origin'
-    click_on 'Create Product'
-    expect(page).to have_content 'Product successfully added!'
-    expect(page).to have_content 'Tomatoes'
+    click_on 'Add a review' 
+    fill_in 'Author', :with => "Ryan"   
+    fill_in 'Rating', :with => "5"
+    fill_in 'Content body', :with => "This product was really high quality. I would purchase again. It was gooooooooooood."
+    click_on 'Create Review'
+    expect(page).to have_content 'Thanks for the feedback!'
+    expect(page).to have_content 'Tomatoe'
+    expect(page).to have_content "This product was really high quality. I would purchase again. It was gooooooooooood."
   end
 
   it "gives an error when no name is entered" do
-    visit new_product_path
-    click_on 'Create Product'
+    test_product = Product.new({name: "Tomatoe", cost: "2", country_of_origin: "Mexico"})
+    test_product.save
+    visit products_path
+    click_on 'Tomatoe'
+    click_on 'Add a review' 
+    fill_in 'Author', :with => ""   
+    fill_in 'Rating', :with => "5"
+    fill_in 'Content body', :with => "This product was really high quality. I would purchase again. It was gooooooooooood."
+    click_on 'Create Review'
     expect(page).to have_content 'error'
   end
 end

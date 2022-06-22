@@ -1,15 +1,15 @@
 <div class="jumbotron">
   <div class="container">
-    <h1><strong>Mario's Specialty Foods</strong></h1>
-      <p>Established in 1981 in Portland, Oregon, Mario's specializes in high quality foods from around the globe. Please view our wide inventory of goods below. We value feedback so please leave a review. Enjoy! </p>
-  </div>
+    <h1 class="display-4">Mario's Specialty Foods</h1>
+    <p>Established in 1981 in Portland, Oregon, Mario's specializes in high quality foods from around the globe. Please view our wide inventory of goods below. We value feedback so please leave a review. Enjoy!</p>
+    <hr class="my-4">
+    <%= link_to "Browse all products here!", products_path, class: "btn btn-default" %>
+  </div>  
 </div>  
+
 
 <div class="container">
    <%# <% if @products.any? %> 
-
-   <h3><%= link_to "Browse all products here!", products_path %></h3> 
- <br>
 
     <h3>Popular links:</h3>
     <h4>New reviews</h4>
@@ -46,6 +46,6 @@
       <% else %>
         <p>Sorry - no products available.</p>
       <% end %> 
+      <%= image_tag "food_store.jpeg" %>
+      </div>
 
-
-</div>

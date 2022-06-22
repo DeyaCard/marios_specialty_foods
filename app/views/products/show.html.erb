@@ -21,7 +21,7 @@
   <p><%= link_to "Add a review", new_product_review_path(@product) %></p>
   <p><%= link_to "Edit", edit_product_path(@product) %></p>
   <p><%= link_to "Delete", product_path(@product),
-                         :data => {:confirm => "You sure?",
+                         :data => {
                                    :method => "delete"} %></p>
   <p><%= link_to "Return to products", products_path %></p>
   <p><%= link_to "Return to main menu", "/" %></p>
