@@ -48,22 +48,14 @@
       <% end %> 
 
       <% if user_signed_in? %>
-      <p><%= link_to "Logout", destroy_user_session_path, class: "btn btn-primary btn-lg" , :method => :delete %>
+      <p><%= link_to "Logout", destroy_user_session_path, class: "btn btn-default", :method => :delete %>
     <% else %>
       <p>You are not signed in.</p>
-      <%= link_to "Sign up!", new_user_registration_path, class: "btn btn-primary btn-lg" %>
-      <%= link_to "Login", new_user_session_path, class: "btn btn-primary btn-lg" %>
+      <%= link_to "Sign up!", new_user_registration_path, class: "btn btn-default" %>
+      <%= link_to "Login", new_user_session_path, class: "btn btn-default" %>
     <% end %>
 
       <%= image_tag "food_store.jpeg" %>
-
-  <% if user_signed_in? %>
-    <p><%= link_to "Logout", destroy_user_session_path, class: "btn btn-primary btn-lg" , 'data-turbo-method': :delete %>
-  <% else %>
-    <p>You are not signed in.</p>
-    <%= link_to "Sign up!", new_user_registration_path, class: "btn btn-primary btn-lg" %>
-    <br>
-    <%= link_to "Login", new_user_session_path, class: "btn btn-primary btn-lg" %>
-    <% end %>  
+ 
 </div>
 
