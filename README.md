@@ -6,6 +6,7 @@ An application created to track specialty food products and their reviews, power
 
 ## Technologies used:
 * Ruby
+* Rails
 * Gems
 * HTML
 * CSS
@@ -14,6 +15,8 @@ An application created to track specialty food products and their reviews, power
 * Pry
 * Faker
 * Capybara
+* RSpec
+* SQL
 
 
 
@@ -28,11 +31,16 @@ An application created to track specialty food products and their reviews, power
 * run rake db:seed
 * run rails s
 * In your browser of choice, navigate to localhost:3000
+* To create an account, click the sign up button on the home page
+* run rails c
+* run user = User.where(email: "YOUR EMAIL HERE") in the account you created
+* run user.update(admin: true) to switch to admin status
 * Enjoy!
 
 
+
 ## Known Bugs:
-* No known issues.
+* No known bugs. Please report issues to thedeyacard@gmail.com
 
 
 ## License: 
