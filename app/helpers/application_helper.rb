@@ -1,12 +1,6 @@
 module ApplicationHelper
-  def alert_class(flash_type)
-    case flash_type.to_sym
-    when :notice
-      "alert-success"
-    when :alert
-      "alert-warning"
-    when :Error
-      "alert-danger"
-    end
-  end         
+  def is_admin?
+    current_user && current_user.admin
+  end
 end
+

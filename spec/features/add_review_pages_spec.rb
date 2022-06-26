@@ -1,6 +1,18 @@
 require 'rails_helper'
 
 describe "the add a review process" do
+ before :each do
+  visit new_user_registration_path
+  fill_in 'Email', with: tobin@soccer.com'
+  fill_in 'Password', with: 'password'
+  fill_in 'Password confirmation', with: 'password'
+  click_on 'Sign up'
+  User.find_by(email: "tobin@soccer.com").update!(admin: true)
+  visit new_product_path
+  product = Product.create({name: "Kaleslaw", cost: 7, country_of_origin: "Germany"})
+  click_on "Add new product"
+ end
+
   it "adds a new review" do
     test_product = Product.new({name: "Tomatoe", cost: "2", country_of_origin: "Mexico"})
     test_product.save
