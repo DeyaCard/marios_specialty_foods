@@ -6,15 +6,17 @@
       <% @products.each do |product| %>
         <li><%= link_to product.name, product_path(product) %></li>
       <% end %>
-  
-
   <% end %>
+
 </div>
-<p><%= link_to "Return to main menu", "/" %></p>
-<br>
-<% if current_user && current_user.admin %>
-  <%= link_to “Add new product", new_product_path %>
-<% end %>
+
+  <p><%= link_to "Return to main menu", "/" %></p>
+
+  <br>
+
+  <% if current_user && current_user.admin %>
+    <%= link_to “Add new product", new_product_path %>
+  <% end %>
 
 
           

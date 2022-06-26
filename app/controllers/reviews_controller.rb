@@ -1,4 +1,8 @@
 class ReviewsController < ApplicationController
+  before_action :authenticate_user!, :only => [:new]
+  before_action :only => [:edit, :update, :destroy] do
+    redirect_to new_user_session_path unless current_user && current_user.admin
+  end
 
   def index
     # Code for listing all reviews goes here.

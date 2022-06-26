@@ -2,7 +2,12 @@ require 'rails_helper'
 
 describe "edits a product" do
   before :each do
-    Product.destroy_all
+    visit new_user_registration_path
+    fill_in 'Email', with: 'tobin@soccer.com'
+    fill_in 'Password', with: 'password'
+    fill_in 'Password confirmation', with: 'password'
+    click_on 'Sign up'
+    User.find_by(email: "tobin@soccer.com").update!(admin: true)
   end
 
   it "updates a new product" do
