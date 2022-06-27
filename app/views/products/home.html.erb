@@ -4,12 +4,15 @@
     <p>Established in 1981 in Portland, Oregon, Mario's specializes in high quality foods from around the globe. Please view our wide inventory of goods below. We value feedback so please leave a review. Enjoy!</p>
     <hr class="my-4">
     <%= link_to "Browse all products here!", products_path, class: "btn btn-default" %>
-  </div>  
-</div>  
-
-
-<div class="container">
-   <%# <% if @products.any? %> 
+    <br>
+    <br>
+    <% if user_signed_in? %>
+      <p><%= link_to "Logout", destroy_user_session_path, class: "btn btn-default", :method => :delete %>
+    <% else %>
+      <p>You are not signed in.</p>
+      <%= link_to "Sign up!", new_user_registration_path, class: "btn btn-default" %>
+      <%= link_to "Login", new_user_session_path, class: "btn btn-default" %>
+    <% end %>
 
     <h3>Popular links:</h3>
     <h4>New reviews</h4>
@@ -44,20 +47,10 @@
           <% end %>
         </ul>
       <% else %>
-        <p>Sorry - no products available.</p>
+        <p>Sorry - no local products available.</p>
       <% end %> 
 
-      <br>
-
-      <% if user_signed_in? %>
-      <p><%= link_to "Logout", destroy_user_session_path, class: "btn btn-default", :method => :delete %>
-    <% else %>
-      <p>You are not signed in.</p>
-      <%= link_to "Sign up!", new_user_registration_path, class: "btn btn-default" %>
-      <%= link_to "Login", new_user_session_path, class: "btn btn-default" %>
-    <% end %>
-
       <%= image_tag "food_store.jpeg" %>
- 
+ </div>
 </div>
 
