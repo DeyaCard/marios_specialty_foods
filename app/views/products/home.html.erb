@@ -6,6 +6,9 @@
     <%= link_to "Browse all products here!", products_path, class: "btn btn-default" %>
     <br>
     <br>
+    <%= image_tag "food_store.jpeg" %>
+    <br>
+    <br>
     <% if user_signed_in? %>
       <p><%= link_to "Logout", destroy_user_session_path, class: "btn btn-default", :method => :delete %>
     <% else %>
@@ -50,7 +53,6 @@
         <p>Sorry - no local products available.</p>
       <% end %> 
 
-      <%= image_tag "food_store.jpeg" %>
  </div>
 </div>
 
