@@ -1,6 +1,9 @@
-<div class="container">
-  <h1>Products</h1>
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4">Products</h1>
+  </div>
 
+  
   <% if @products.any? %>
     <ul>
       <% @products.each do |product| %>
@@ -8,15 +11,13 @@
       <% end %>
     </ul>
   <% end %>
-
-</div>
-
-
 <br>
 
-<% if current_user && current_user.admin %>
-  <%= link_to "Add new product", new_product_path %>
-<% end %>
+  <% if current_user && current_user.admin %>
+    <p><%= link_to "Add new product", new_product_path %></p>
+  <% end %>
+  <p><%= link_to "Return to main menu", "/" %></p>
 
-<p><%= link_to "Return to main menu", "/" %></p>
+  </div>
+</div>
 
