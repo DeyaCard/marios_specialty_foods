@@ -47,6 +47,8 @@
         <p>Sorry - no products available.</p>
       <% end %> 
 
+      <br>
+
       <% if user_signed_in? %>
       <p><%= link_to "Logout", destroy_user_session_path, class: "btn btn-default", :method => :delete %>
     <% else %>

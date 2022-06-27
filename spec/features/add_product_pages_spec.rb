@@ -30,13 +30,13 @@ describe "the add a product process" do
 
   it "deletes a product from the database" do
     visit new_product_path
-    fill_in 'Name', :with => 'tomatoes'
+    fill_in 'Name', :with => 'watermelon'
     fill_in 'Cost', :with => '2.00'
     select 'Mexico', :from => 'Country of origin'
     click_on 'Create Product'
-    click_on "Tomatoes"
+    click_on "Watermelon"
     click_on "Delete"
-    expect(page).to have_no_content "Tomatoes"
+    expect(page).to have_no_content "Watermelon"
   end
 
 end

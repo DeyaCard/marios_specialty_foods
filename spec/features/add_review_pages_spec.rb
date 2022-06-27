@@ -8,14 +8,13 @@ describe "the add a review process" do
     fill_in 'Password confirmation', with: 'password'
     click_on 'Sign up'
     User.find_by(email: "tobin@soccer.com").update!(admin: true)
-    visit new_product_path
     product = Product.create({name: "Tomatoe", cost: 2, country_of_origin: "Mexico"})
-    click_on "Add new product"
+    # click_on "Add new product"
   end
 
   it "adds a new review" do
-    test_product = Product.new({name: "Tomatoe", cost: "2", country_of_origin: "Mexico"})
-    test_product.save
+    # test_product = Product.new({name: "Tomatoe", cost: "2", country_of_origin: "Mexico"})
+    # test_product.save
     visit products_path
     click_on 'Tomatoe'
     click_on 'Add a review' 
@@ -29,8 +28,8 @@ describe "the add a review process" do
   end
 
   it "gives an error when no name is entered" do
-    test_product = Product.new({name: "Tomatoe", cost: "2", country_of_origin: "Mexico"})
-    test_product.save
+    # test_product = Product.new({name: "Tomatoe", cost: "2", country_of_origin: "Mexico"})
+    # test_product.save
     visit products_path
     click_on 'Tomatoe'
     click_on 'Add a review' 
